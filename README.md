@@ -3,11 +3,11 @@
 This Flutter project demonstrates different Riverpod state management techniques using separate pages. You can navigate between them using a Bottom Navigation Bar.
 
 ## Features
-~ StateProvider - Counter Example <br>
-~ StateNotifierProvider - To-Do List <br>
-~ ChangeNotifierProvider - User Profile <br>
-~ FutureProvider - Stock Market Data <br>
-~ StreamProvider - Live User Updates <br>
+- StateProvider - Counter Example <br>
+- StateNotifierProvider - To-Do List <br>
+- ChangeNotifierProvider - User Profile <br>
+- FutureProvider - Stock Market Data <br>
+- StreamProvider - Live User Updates <br>
 
 <i>Each provider is implemented in a separate screen, and navigation is handled with a BottomNavigationBar.</i>
 
@@ -39,24 +39,20 @@ final counterProvider = StateProvider<int>((ref) => 0);
 class CounterScreen extends ConsumerWidget {
 @override
 Widget build(BuildContext context, WidgetRef ref) {
-final counter = ref.watch(counterProvider);
-
+  final counter = ref.watch(counterProvider);
     return Scaffold(
-      appBar: AppBar(title: Text('Counter Example')),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Counter: $counter'),
-            ElevatedButton(
-              onPressed: () => ref.read(counterProvider.notifier).state++,
-              child: Text('Increment'),
-            ),
-          ],
-        ),
+      body:Column(
+        children: [
+          Text('Counter: $counter'),
+          ElevatedButton(
+            onPressed: () => ref.read(counterProvider.notifier).state++,
+            child: Text('Increment'),
+          ),
+        ],
       ),
     );
   }
 }
 
 ```
+
