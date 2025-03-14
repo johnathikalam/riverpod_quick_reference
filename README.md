@@ -33,8 +33,8 @@ This Flutter project demonstrates different Riverpod state management techniques
 ## StateProvider - Counter Example
 - Use Case: Managing simple primitive state (e.g., int, bool).
 - File: counter_screen.dart
-'''
-- final counterProvider = StateProvider<int>((ref) => 0);
+```
+final counterProvider = StateProvider<int>((ref) => 0);
 
 class CounterScreen extends ConsumerWidget {
 @override
@@ -56,7 +56,7 @@ final counter = ref.watch(counterProvider);
         ),
       ),
     );
-}
+  }
 }
 
-'''
+```
