@@ -9,7 +9,7 @@ This Flutter project demonstrates different Riverpod state management techniques
 ~ FutureProvider - Stock Market Data <br>
 ~ StreamProvider - Live User Updates <br>
 
-Each provider is implemented in a separate screen, and navigation is handled with a BottomNavigationBar.
+<i>Each provider is implemented in a separate screen, and navigation is handled with a BottomNavigationBar.</i>
 
 ## Project Structure
 
@@ -27,4 +27,5 @@ Each provider is implemented in a separate screen, and navigation is handled wit
 │   │── user_provider.dart <br>
 │   │── stock_provider.dart <br>
 │   │── live_user_provider.dart <br>
+
 
