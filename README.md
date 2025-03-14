@@ -3,7 +3,7 @@
 This Flutter project demonstrates different Riverpod state management techniques using separate pages. You can navigate between them using a Bottom Navigation Bar.
 
 ## Features
-~ StateProvider - Counter Example\n
+~ StateProvider - Counter Example <br>
 ~ StateNotifierProvider - To-Do List
 ~ ChangeNotifierProvider - User Profile
 ~ FutureProvider - Stock Market Data
