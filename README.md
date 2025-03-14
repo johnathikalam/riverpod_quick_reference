@@ -28,4 +28,35 @@ This Flutter project demonstrates different Riverpod state management techniques
 │   │── stock_provider.dart <br>
 │   │── live_user_provider.dart <br>
 
+# Riverpod Providers Explaination
 
+## StateProvider - Counter Example
+- Use Case: Managing simple primitive state (e.g., int, bool).
+- File: counter_screen.dart
+'''
+- final counterProvider = StateProvider<int>((ref) => 0);
+
+class CounterScreen extends ConsumerWidget {
+@override
+Widget build(BuildContext context, WidgetRef ref) {
+final counter = ref.watch(counterProvider);
+
+    return Scaffold(
+      appBar: AppBar(title: Text('Counter Example')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Counter: $counter'),
+            ElevatedButton(
+              onPressed: () => ref.read(counterProvider.notifier).state++,
+              child: Text('Increment'),
+            ),
+          ],
+        ),
+      ),
+    );
+}
+}
+
+'''
