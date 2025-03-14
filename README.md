@@ -54,7 +54,8 @@ Widget build(BuildContext context, WidgetRef ref) {
   }
 }
 ```
-<br><br>
+<br>
+
 ## StateNotifierProvider - To-Do List
 - Use Case: Managing complex state (lists, objects).
 - File: todo_screen.dart
@@ -70,7 +71,8 @@ class TodoNotifier extends StateNotifier<List<String>> {
 
 final todoProvider = StateNotifierProvider<TodoNotifier, List<String>>((ref) => TodoNotifier());
 ```
-<br><br>
+<br>
+
 ## ChangeNotifierProvider - User Profile
 - Use Case: Managing state using ChangeNotifier.
 - File: user_screen.dart
@@ -87,7 +89,8 @@ class User extends ChangeNotifier {
 
 final userProvider = ChangeNotifierProvider((ref) => User());
 ```
-<br><br>
+<br>
+
 ## FutureProvider - Stock Data
 - Use Case: Fetching data asynchronously (API calls, database).
 - File: stock_screen.dart
@@ -98,7 +101,8 @@ final stockProvider = FutureProvider<List<String>>((ref) async {
   return ['AAPL', 'GOOG', 'MSFT'];
 });
 ```
-<br><br>
+<br>
+
 ##  StreamProvider - Live User Updates
 - Use Case: Real-time data updates (Firebase, WebSockets).
 - File: live_user_screen.dart
@@ -109,7 +113,8 @@ final userStreamProvider = StreamProvider<String>((ref) {
 });
 
 ```
-<br><br>
+<br>
+
 ## Summary
 | Provider Type          | Purpose                         | Example Screen    |
 |------------------------|--------------------------------|-------------------|
