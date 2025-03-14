@@ -53,6 +53,68 @@ Widget build(BuildContext context, WidgetRef ref) {
     );
   }
 }
+```
+<br><br>
+## StateNotifierProvider - To-Do List
+- Use Case: Managing complex state (lists, objects).
+- File: todo_screen.dart
 
 ```
+class TodoNotifier extends StateNotifier<List<String>> {
+  TodoNotifier() : super([]);
 
+  void addTask(String task) {
+    state = [...state, task];
+  }
+}
+
+final todoProvider = StateNotifierProvider<TodoNotifier, List<String>>((ref) => TodoNotifier());
+```
+<br><br>
+## ChangeNotifierProvider - User Profile
+- Use Case: Managing state using ChangeNotifier.
+- File: user_screen.dart
+
+```
+class User extends ChangeNotifier {
+  String name = "Guest";
+
+  void updateName(String newName) {
+    name = newName;
+    notifyListeners();
+  }
+}
+
+final userProvider = ChangeNotifierProvider((ref) => User());
+```
+<br><br>
+## FutureProvider - Stock Data
+- Use Case: Fetching data asynchronously (API calls, database).
+- File: stock_screen.dart
+
+```
+final stockProvider = FutureProvider<List<String>>((ref) async {
+  await Future.delayed(Duration(seconds: 2));
+  return ['AAPL', 'GOOG', 'MSFT'];
+});
+```
+<br><br>
+##  StreamProvider - Live User Updates
+- Use Case: Real-time data updates (Firebase, WebSockets).
+- File: live_user_screen.dart
+
+```
+final userStreamProvider = StreamProvider<String>((ref) {
+  return Stream.periodic(Duration(seconds: 1), (count) => 'User $count');
+});
+
+```
+<br><br>
+## Summary
+| Provider Type          | Purpose                         | Example Screen    |
+|------------------------|--------------------------------|-------------------|
+| `StateProvider`       | Simple state (int, bool)      | Counter Screen    |
+| `StateNotifierProvider` | Complex state (lists, objects) | To-Do Screen      |
+| `ChangeNotifierProvider` | Object-based state management | User Screen       |
+| `FutureProvider`      | API calls / async data        | Stock Screen      |
+| `StreamProvider`      | Real-time updates             | Live User Screen  |
